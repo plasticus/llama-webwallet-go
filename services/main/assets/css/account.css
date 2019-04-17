@@ -196,3 +196,9 @@ table.tx td:last-child {
 .link-logout:active {
 
 }
+.llamalink a { 
+   color: gold;
+}
+.llamalink {
+  font-size: 0.8em;
+}
