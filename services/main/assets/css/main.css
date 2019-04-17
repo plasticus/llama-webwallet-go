@@ -124,3 +124,9 @@ body {
     height: 36px;
     width: auto;
 }
+.llamalink a { 
+   color: gold;
+}
+.llamalink {
+  font-size: 0.8em;
+}
