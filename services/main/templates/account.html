@@ -47,11 +47,11 @@
       </tr>
       <tr>
         <th>Available</th>
-        <td><span id="available_balance">{{ printf "%.2f" (index .Wallet "balance" "availableBalance") }} OSC</span></td>
+        <td><span id="available_balance">{{ printf "%.2f" (index .Wallet "balance" "availableBalance") }} BTCM</span></td>
       </tr>
       <tr>
         <th>Locked / Unconfirmed</th>
-        <td><span id="locked_amount">{{ printf "%.2f" (index .Wallet "balance" "lockedAmount") }} OSC</span></td>
+        <td><span id="locked_amount">{{ printf "%.2f" (index .Wallet "balance" "lockedAmount") }} BTCM</span></td>
       </tr>
       <tr>
         <th>Address</th>
@@ -68,9 +68,9 @@
 <div class="table-container">
     <form action={{ printf "%s%s" .PageAttr.URI "/account/send_transaction"}} method="POST">
       <div class="input-field grey-input">
-        <h2>Send Transaction</h2><small>fee: 0.1 OSC</small><br>
+        <h2>Send Transaction</h2><small>fee: 0.25 OSC</small><br>
         <span class="caret-icon"></span>
-        <input id="send_to" type="text" name="destination" placeholder="Enter destination address..." pattern="^hann([a-zA-Z0-9]{95}|[a-zA-Z0-9]{183})\s*$" required/>
+        <input id="send_to" type="text" name="destination" placeholder="Enter destination address..." pattern="^btcm([a-zA-Z0-9]{95}|[a-zA-Z0-9]{183})\s*$" required/>
         <span class="amount-icon"></span>
         <input id="send_amount" type="text" name="amount" placeholder="Enter Amount.." pattern="^\d+\.{0,1}\d{0,6}$" required/>
         <span class="paymentid-icon"></span>
