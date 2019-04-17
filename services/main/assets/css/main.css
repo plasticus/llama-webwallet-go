@@ -124,9 +124,9 @@ body {
     height: 36px;
     width: auto;
 }
+.llamalink a { 
+   color: green;
+}
 .llamalink {
   font-size: 0.8em;
-  a:link { color:green;}
-  a:visited { color:green;}
-  a:hover { color:lightgreen;}
 }
