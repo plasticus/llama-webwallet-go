@@ -18,8 +18,8 @@ function setWalletStatus () {
       document.getElementById("wallet_status").className = "orange-input";
     }
 
-    document.getElementById("available_balance").textContent = `${availableBalance} ${tickerSymbol}`;
-    document.getElementById("locked_amount").textContent = `${lockedAmount} ${tickerSymbol}`;
+    document.getElementById("available_balance").textContent = `${availableBalance}`;
+    document.getElementById("locked_amount").textContent = `${lockedAmount}`;
     document.getElementById("block_count").textContent = blockCount + "/" + knownBlockCount;
     console.log("checking wallet...");
   }
@@ -30,6 +30,27 @@ function confirmation () {
     let conf_msg = document.getElementById("send_confirmation");
     let sendTo = document.getElementById("send_to").value;
     conf_msg.textContent = `You are sending ${amount} ${tickerSymbol} to: ${sendTo}`;
+}
+
+function getUrlVars() {
+  let vars = {};
+  let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, (m,key,value) => {
+      vars[key] = value;
+  });
+  return vars;
+}
+
+function setPaymentForm() {
+  let vals = getUrlVars();
+  if (vals.address !== undefined) {
+      document.getElementById('send_to').value = vals.address;
+  }
+  if (vals.amount !== undefined) {
+      document.getElementById('send_amount').value = vals.amount;
+  }
+  if (vals.paymentid !== undefined) {
+      document.getElementById('s_paymentid').value = vals.paymentid;
+  }
 }
 
 window.setInterval(setWalletStatus, updateInterval);
